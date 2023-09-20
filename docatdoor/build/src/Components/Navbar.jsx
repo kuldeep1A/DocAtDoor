@@ -23,7 +23,15 @@ const NavBar = () => {
 
       const showNavBar = (event) => {
         const parentDiv = event.currentTarget.parentNode;
-        const Div = parentDiv.querySelector('[data-file]');
+        const NavItems = parentDiv.querySelector('[data-file]');
+
+        if (NavItems.classList.contains(styles.NavItem)) {
+            NavItems.classList.remove(styles.NavItem);
+            NavItems.classList.add(styles.NavItemMobile);
+        } else {
+            NavItems.classList.remove(styles.NavItemMobile);
+            NavItems.classList.add(styles.NavItem);
+        }
         
       }
 
