@@ -2,21 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { Components } from './Components/Components';
+import { Sform } from './Components/sform';
+
 import reportWebVitals from './reportWebVitals';
-import Filter from './Components/Filter';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// console.log(test);
 root.render(
   <React.StrictMode>
     <App />
-    <Filter/>
-
-    {/* <test/> */}
-    {/* console.log(); */}
+    <Components />
+    <Sform />
   </React.StrictMode>
 );
 
