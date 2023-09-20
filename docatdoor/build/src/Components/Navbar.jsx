@@ -23,7 +23,6 @@ const NavBar = () => {
         <>
             <div className="w-full h-[100px] shadow-md flex flex-row justify-between items-center px-4">
                 <div className='flex flex-row'>
-        
                     <a href='/' className='flex flex-row items-center '>
                     <img src={logo}
                         alt='Logo'
@@ -32,20 +31,33 @@ const NavBar = () => {
                     <span className='text-2xl text-sky-500 font-bold'>DocAtDoor</span>
                     </a>
                 </div>
-                <div>
-                    <nav>
-                        <ul className='flex flex-row gap-x-6'>
-                        {
-                            NavbarLinks.map((link, index) => (
-                            <li key={index} className='text-sky-500 text-lg font-semibold cursor-pointer'>
-                                <a href={link.path}>
-                                    {link.title}
-                                </a>
-                            </li>
-                            ))
-                        }
-                        </ul>
-                    </nav>
+
+                <div className='flex flex-row items-center gap-4'>
+                    <div>
+                        <nav>
+                            <ul className='flex flex-row gap-x-6'>
+                            {
+                                NavbarLinks.map((link, index) => (
+                                <li key={index} className='text-sky-500 text-lg font-semibold cursor-pointer'>
+                                    <a href={link.path}>
+                                        {link.title}
+                                    </a>
+                                </li>
+                                ))
+                            }
+                            </ul>
+                        </nav>
+                    </div>
+                    <div className='flex flex-row gap-x-3'>
+                        <button className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
+                        hover:bg-sky-600 hover:text-white'>
+                            Login
+                        </button>
+                        <button className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
+                            hover:bg-sky-600 hover:text-white'>
+                            Signup
+                        </button>
+                    </div>
                 </div>
             </div>
         </>
