@@ -1,7 +1,10 @@
+import styles from "./about.module.scss"
 
 function About() {
   return (
-    <div>About</div>
+    <div className={styles.main}>
+      <div >About</div>
+    </div>
   )
 }
 
