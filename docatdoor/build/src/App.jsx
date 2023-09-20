@@ -1,25 +1,48 @@
-import './App.css';
-import { Navbar } from './Components/Navbar.jsx';
-import { Route, Routes } from 'react-router-dom'
-import { Home } from './Pages/Home.jsx';
-function App() {
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Error from "./pages/Error"
+import Contact from "./pages/Contact"
+import Doctor from "./pages/Doctor"
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>
+  },
+  {
+    path: "about",
+    element: <About />,
+  },
+  {
+    path: "doctor",
+    element: <Doctor/>
+  },
+  {
+    path: "contact",
+    element: <Contact/>
+  },
+  {
+    path: "*",
+    element: <Error />
+  }
+]);
+
+function App() {
   return (
     <>
       <div className="App">
-      <header className="App-header">
-        {/* <p>Start DocAtDoor</p> */}
-        <Navbar/>
-
-        <Routes>
-          <Route  
-            path='/'
-            element={<Home/>}
-          />
-        </Routes>
-        
-      </header>
-    </div>
+        <div className="">
+          <header className="App-header">
+              <RouterProvider  router={router} />
+          </header>
+        </div>
+      </div>
     </>
   )
 }

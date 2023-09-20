@@ -1,11 +1,15 @@
+import NavBar from "../Components/Navbar";
 
-export const Home = () => {
+const Home = () => {
   return (
-    <div className='w-full h-[500]'>
-      {/* dflj*/}
-      <div className='bg-gradient-to-l from-sky-200 via-sky-100 to-transparent h-[500px]'>
-          section 1
+    <>
+      <div className='w-full h-[500]'>
+        <div className='bg-gradient-to-l from-sky-200 via-sky-100 to-transparent h-[500px]'>
+          <NavBar/>
+          
+        </div>
       </div>
-    </div>
+    </>
   )
 }
+export default Home;
