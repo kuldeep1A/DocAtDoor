@@ -1,12 +1,40 @@
+import { useState } from 'react';
+import { DoctorList } from "./Components"
+
+var data = {
+    Category: "Fever",
+    age: 15, 
+    locality: "Mandsaur"
+}
+
+var dd = {
+    Vehdat: {
+        Name: "Vehdat",
+        Specialization: "Fever",
+        Schedule: "1-4",
+        Experience: 15
+    },
+    KD: {
+        Name: "KD",
+        Specialization: "Fever",
+        Schedule: "1-4",
+        Experience: 15
+    }
+}
+
 export const CheckDoctor = (userData)=>{
     // var doctors = {}
-    // var keys = Object.keys(doctors)
-    // var filtered_list = []
+    var keys = Object.keys(dd)
+    var filtered_list = []
 
-    // for (let i = 0; i < keys.length; i++) {
-    //     const doctor = doctors[i];
-    //     if (doctor['Specialization'] == userData['Category']){
-    //         filtered_list.push(doctor);
-    //     }
-    // }
+    for (let i = 0; i < keys.length; i++) {
+        const doctor = dd[keys[i]];
+        console.log(doctor);
+        console.log(userData);
+        if (doctor['Specialization'] === userData['Disease']){
+            filtered_list.push(doctor);
+        }
+    }
+
+    return filtered_list;
 }

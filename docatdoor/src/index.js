@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { Components } from './Components/Components';
+import { Components, DoctorList } from './Components/Components';
 import { Sform } from './Components/sform';
 
 import reportWebVitals from './reportWebVitals';
@@ -16,6 +16,7 @@ root.render(
     <App />
     <Components />
     <Sform />
+    {/* <DoctorList /> */}
   </React.StrictMode>
 );
 
