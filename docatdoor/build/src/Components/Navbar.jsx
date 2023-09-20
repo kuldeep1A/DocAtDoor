@@ -1,4 +1,5 @@
 import logo from '../Assets/Logo/logo.png'
+import styles from './navbar.module.scss'
 
 const NavBar = () => {
     const NavbarLinks = [
@@ -19,6 +20,13 @@ const NavBar = () => {
           path: "/contact",
         },
       ];
+
+      const showNavBar = (event) => {
+        const parentDiv = event.currentTarget.parentNode;
+        const Div = parentDiv.querySelector('[data-file]');
+        
+      }
+
     return (
         <>
             <div className="w-full h-[100px] shadow-md flex flex-row justify-between items-center px-4">
@@ -33,7 +41,7 @@ const NavBar = () => {
                 </div>
 
                 <div className='flex flex-row items-center gap-4'>
-                    <div>
+                    <div data-file={"___NavItem"} className={styles.NavItem}>
                         <nav>
                             <ul className='flex flex-row gap-x-6'>
                             {
@@ -57,6 +65,11 @@ const NavBar = () => {
                             hover:bg-sky-600 hover:text-white'>
                             Signup
                         </button>
+                    </div>
+                    <div onClick={showNavBar} className={styles.hamburger_container}>
+                        <div className={styles.hamburger_line}></div>
+                        <div className={styles.hamburger_line}></div>
+                        <div className={styles.hamburger_line}></div>
                     </div>
                 </div>
             </div>
