@@ -8,7 +8,7 @@ const NavBar = () => {
         },
         {
           title: "Doctors",
-          path: '/ḍoctors',
+          path: '/ḍoctor',
         },
         {
           title: "About Us",
