@@ -1,0 +1,33 @@
+.form{
+    width: 100%;
+    font-size: large;
+    padding: 1rem;
+    text-align: center;
+    /* background-color: #b5e1f5; */
+}
+
+.form label{
+    font-weight: 500;
+    color: #4071db;
+}
+.form input{
+    background-color: rgb(230, 230, 230);
+    border: 10% black 1px 1px;
+    margin-inline: 1rem;
+    border-radius: 0.25rem;
+    padding-inline: 0.25rem;
+    font-weight: 450;
+}
+
+.form .submit{
+    color: white;
+    background-color: #4071db;
+    padding-inline: 1rem;
+    border-radius: 0.25rem;
+
+    transition: all 0.25s;
+}
+
+.form .submit:hover{
+    background-color: #0ea5e9;
+}
