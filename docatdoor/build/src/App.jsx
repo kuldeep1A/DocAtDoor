@@ -3,6 +3,7 @@ import About from "./pages/About"
 import Error from "./pages/Error"
 import Contact from "./pages/Contact"
 import Doctor from "./pages/Doctor"
+import { Sform } from "./Components/Filter/sform"
 
 import {
   createBrowserRouter,
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "contact",
     element: <Contact/>
+  },
+  {
+    path: "/test",
+    element: <Sform/>
   },
   {
     path: "*",
