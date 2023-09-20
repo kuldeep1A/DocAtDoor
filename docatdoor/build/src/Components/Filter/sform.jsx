@@ -1,5 +1,9 @@
+
 import { useState } from 'react';
 import { CheckDoctor } from './DoctorFilter'
+import '../CSS/simple.css'
+import NavBar from '../Navbar';
+
 // const http = require('http')
 
 // http.get('/test', (res))
@@ -20,7 +24,7 @@ export const Sform = ()=>{
 
         for(let i = 0; i < list.length; i++){
             const ele = list[i]
-            ui.push(<DocUi Name={ele.Name} Specialization={ele.Specialization}/>)
+            ui.push(<DocUi Name={ele.Name} Specialization={ele.Specialization} Rating={ele.Rating}/>)
         }
         // console.log("UI");
         // console.log(ui);
@@ -29,11 +33,12 @@ export const Sform = ()=>{
     }
     return (
         <div>
-            <form onSubmit={SubmitHandler}>
+            <NavBar/>
+            <form className='form' onSubmit={SubmitHandler}>
                 <label htmlFor="">Name</label>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 <input type="text" value={disease} onChange={(e) => setDisease(e.target.value)} />
-                <input type="submit"/>
+                <input className='submit' type="submit" value={"Search"}/>
             </form>
             <DocList Doctors={ui}/>
         </div>
@@ -42,9 +47,11 @@ export const Sform = ()=>{
 
 function DocUi(params) {
     return(
-        <center>
-            <h2>{params.Name}</h2>    
-            <h2>{params.Specialization}</h2>    
+        <center className='item'>
+            <h2>Dr. {params.Name}</h2>    
+            <h2>Spec. {params.Specialization}</h2>    
+            <h2>Rating {params.Rating}</h2>    
+            <button>Book</button>
         </center>
     )
 }

@@ -11,12 +11,14 @@ var dd = {
     Vehdat: {
         Name: "Vehdat",
         Specialization: "Fever",
+        Rating: "⭐⭐⭐⭐⭐",
         Schedule: "1-4",
         Experience: 15
     },
     KD: {
         Name: "KD",
         Specialization: "Fever",
+        Rating: "⭐⭐⭐⭐",
         Schedule: "1-4",
         Experience: 15
     }
