@@ -51,7 +51,7 @@ function RegisterForm() {
         <>
         <NavBar />
         <div className={styles.login}>
-         <img style={{position: 'fixed'}} src={bg2} alt="image" className={styles.login__bg}/>
+         <img src={bg2} alt="image" className={styles.login__bg}/>
          <form action="" className={styles.login__form}>
             <h1 className={styles.login__title}>Register</h1>
 
@@ -80,7 +80,7 @@ function RegisterForm() {
                 <input type="checkbox" value={isDoctor} onChange={(e)=>setIsDoctor(e.target.checked)} className={`block ${styles.login__check__input}`} id="user-type"/>
             </div>
 
-            <button style={{backgroundColor: 'white'}} type="submit" onClick={HandleForm} className="login__button">Register</button>
+            <button style={{backgroundColor: 'white'}} type="submit" onClick={HandleForm} className={styles.login__button}>Register</button>
 
          </form>
       </div>
