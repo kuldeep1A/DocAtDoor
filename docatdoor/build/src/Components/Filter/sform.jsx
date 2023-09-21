@@ -1,8 +1,8 @@
 
 import { useState } from 'react';
 import { CheckDoctor } from './DoctorFilter'
-import '../CSS/simple.css'
 import NavBar from '../Navbar';
+import styles from '../SCSS/simple.module.scss'
 
 // const http = require('http')
 
@@ -34,12 +34,12 @@ export const Sform = ()=>{
     return (
         <div>
             <NavBar/>
-            <form className='form' onSubmit={SubmitHandler}>
+            <form className={styles.form} onSubmit={SubmitHandler}>
                 <label htmlFor="">Name</label>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 <label htmlFor="">Disease</label>
                 <input type="text" value={disease} onChange={(e) => setDisease(e.target.value)} />
-                <input className='submit' type="submit" value={"Search"}/>
+                <input className={styles.submit} type="submit" value={"Search"}/>
             </form>
             <DocList Doctors={ui}/>
         </div>
@@ -48,7 +48,7 @@ export const Sform = ()=>{
 
 function DocUi(params) {
     return(
-        <center className='item'>
+        <center className={styles.item}>
             <h2>Dr. {params.Name}</h2>    
             <h2>Spec. {params.Specialization}</h2>    
             <h2>Rating {params.Rating}</h2>    

@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import NavBar from "../Components/Navbar";
 import { doctorRegister, patientRegister } from "../API/Register"
-
-
-import bg2 from '../Components/loginImg/bg2.webp'
-import '../Components/CSS/FormStyle.css'
+import bg2 from '../assets/loginImg/bg2.webp'
 import { useNavigate } from 'react-router-dom';
+import styles from "../Components/SCSS/registerform.module.scss"
 
 function RegisterForm() {
     const [name, setName] = useState("");
@@ -45,60 +43,45 @@ function RegisterForm() {
          setPassword("")
          setIsDoctor(false)
         }
-
-        
-        
     }
+
+
     return (
-      
+
         <>
         <NavBar />
-        <div className="login">
-         <img style={{position: 'fixed'}} src={bg2} alt="image" className="login__bg"/>
-         <form action="" className="login__form">
-            <h1 className="login__title">Register</h1>
+        <div className={styles.login}>
+         <img style={{position: 'fixed'}} src={bg2} alt="image" className={styles.login__bg}/>
+         <form action="" className={styles.login__form}>
+            <h1 className={styles.login__title}>Register</h1>
 
-            <div className="login__inputs">
-               <div className="login__box">
-                  <input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Name" required className="login__input"/>
-                  <i className="ri-mail-fill"></i>
+            <div className={styles.login__inputs}>
+               <div className={styles.login__box}>
+                  <input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Name" required className={styles.login__input}/>
                </div>
-               <div className="login__box">
-                  <input type="text" value={age} onChange={(e)=>setAge(e.target.value)} placeholder="Age" required className="login__input"/>
-                  <i className="ri-mail-fill"></i>
+               <div className={styles.login__box}>
+                  <input type="text" value={age} onChange={(e)=>setAge(e.target.value)} placeholder="Age" required className={styles.login__input}/>
                </div>
-               <div className="login__box">
-                  <input type="text" value={gender} onChange={(e)=>setGender(e.target.value)} placeholder="Gender" required className="login__input"/>
-                  <i className="ri-mail-fill"></i>
+               <div className={styles.login__box}>
+                  <input type="text" value={gender} onChange={(e)=>setGender(e.target.value)} placeholder="Gender" required className={styles.login__input}/>
                </div>
-               <div className="login__box">
-                  <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email ID" required className="login__input"/>
-                  <i className="ri-mail-fill"></i>
+               <div className={styles.login__box}>
+                  <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email ID" required className={styles.login__input}/>
                </div>
                
 
-               <div className="login__box">
-                  <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required className="login__input"/>
-                  <i className="ri-lock-2-fill"></i>
+               <div className={styles.login__box}>
+                  <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required className={styles.login__input}/>
                </div>
             </div>
 
             <div className="flex flex-col">
-               {/* <div className="login__check-box">
-                  <input type="checkbox" className="login__check-input" id="user-check"/>
-                  <label htmlFor="user-check" className="login__check-label">Remember me</label>
-               </div> */}
-
-                {/* <a href="#" className="login__forgot">Forgot Password?</a> */}
-                <label htmlFor="user-type " className="login__check-label block">Are you Doctor ?</label>
-                <input type="checkbox" value={isDoctor} onChange={(e)=>setIsDoctor(e.target.checked)} className="login__check-input block" id="user-type"/>
+                <label htmlFor="user-type " className="block">Are you Doctor ?</label>
+                <input type="checkbox" value={isDoctor} onChange={(e)=>setIsDoctor(e.target.checked)} className={`block ${styles.login__check__input}`} id="user-type"/>
             </div>
 
             <button style={{backgroundColor: 'white'}} type="submit" onClick={HandleForm} className="login__button">Register</button>
 
-            {/* <div className="login__register">
-               Don't have an account? <a href="#">Register</a>
-            </div> */}
          </form>
       </div>
         </>

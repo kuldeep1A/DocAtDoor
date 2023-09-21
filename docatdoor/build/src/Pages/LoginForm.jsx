@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import NavBar from "../Components/Navbar";
 import { FetchUser } from '../hocks/FetchUser';
-
-import bg2 from '../Components/loginImg/bg2.webp'
-import '../Components/CSS/FormStyle.css'
+import bg2 from '../assets/loginImg/bg2.webp';
+import styles from "../Components/SCSS/loginform.module.scss";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -29,38 +28,34 @@ function LoginForm() {
     return (
         <>
         <NavBar/>
-         <div className="login">
-         <img src={bg2} alt="image" className="login__bg"/>
+         <div className={styles.login}>
+         <img src={bg2} alt="image" className={styles.login__bg}/>
 
-         <form action="" className="login__form">
-            <h1 className="login__title">Login</h1>
+         <form action="" className={styles.login__form}>
+            <h1 className={styles.login__title}>Login</h1>
 
-            <div className="login__inputs">
-               <div className="login__box">
-                  <input type="email" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Email ID" required className="login__input"/>
-                  <i className="ri-mail-fill"></i>
+            <div className={styles.login__inputs}>
+               <div className={styles.login__box}>
+                  <input type="email" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Email ID" required className={styles.login__input}/>
                </div>
 
-               <div className="login__box">
-                  <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required className="login__input"/>
-                  <i className="ri-lock-2-fill"></i>
+               <div className={styles.login__box}>
+                  <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required className={styles.login__input}/>
                </div>
             </div>
 
-            <div className="login__check">
-               <div className="login__check-box">
-                  <input type="checkbox" className="login__check-input" id="user-check"/>
-                  <label htmlFor="user-check" className="login__check-label">Remember me</label>
+            <div className={styles.login__check}>
+               <div className={styles.login__check__box}>
+                  <input type="checkbox" className={styles.login__check__input} id="user-check"/>
+                  <label htmlFor="user-check">Remember me</label>
                </div>
 
-                <a href="#" className="login__forgot">Forgot Password?</a>
-                {/* <input type="checkbox" className="login__check-input" id="user-type"/>
-                <label for="user-type" className="login__check-label">UserType</label> */}
+                <a href="#" className={styles.login__forgot}>Forgot Password?</a>
             </div>
 
-            <button style={{backgroundColor: 'white'}} type="submit" onClick={HandleForm} className="login__button">Login</button>
+            <button style={{backgroundColor: 'white'}} type="submit" onClick={HandleForm} className={styles.login__button}>Login</button>
 
-            <div className="login__register">
+            <div className={styles.login__register}>
                Don&apos;t have an account? <a href="#">Register</a>
             </div>
          </form>

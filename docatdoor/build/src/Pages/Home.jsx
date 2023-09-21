@@ -5,7 +5,7 @@ import img3 from '../assets/Images/HomeImages/examination.png'
 import img4 from '../assets/Images/HomeImages/nutritionist.png'
 import img5 from '../assets/Images/HomeImages/medical-checkup.png'
 import img6 from '../assets/Images/HomeImages/hospital.png'
-import styles from "./home.module.scss"
+import styles from "../Components/SCSS/home.module.scss"
 import { ReviewSlider } from "../Components/ReviewSlider";
 import { Footer } from "../Components/Footor";
 

@@ -1,22 +1,16 @@
-/*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
+
 :root {
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
 
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
   --h1-font-size: 2rem;
   --normal-font-size: 1rem;
   --small-font-size: .813rem;
 }
 
-/*=============== BASE ===============*/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -40,7 +34,6 @@ img {
   height: auto;
 }
 
-/*=============== LOGIN ===============*/
 .login {
   position: relative;
   height: 100vh;
@@ -115,7 +108,7 @@ img {
 }
 
 .login__check, 
-.login__check-box {
+.login__check__box {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -126,11 +119,11 @@ img {
   font-size: var(--small-font-size);
 }
 
-.login__check-box {
+.login__check__box {
   column-gap: .5rem;
 }
 
-.login__check-input {
+.login__check__input {
   width: 1rem;
   height: 1rem;
   accent-color: var(--white-color);
@@ -169,8 +162,6 @@ img {
   text-decoration: underline;
 }
 
-/*=============== BREAKPOINTS ===============*/
-/* For medium devices */
 @media screen and (min-width: 576px) {
   .login {
     justify-content: center;

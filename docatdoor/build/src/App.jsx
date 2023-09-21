@@ -1,5 +1,5 @@
-import Home from "./pages/Home"
-import About from "./pages/About"
+import Home from "./Pages/Home"
+import About from "./Pages/About"
 import Error from "./pages/Error"
 import Contact from "./pages/Contact"
 import Doctor from "./pages/Doctor"
@@ -13,10 +13,11 @@ import {
 } from "react-router-dom";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home />
   },
   {
     path: "about",
@@ -53,9 +54,7 @@ function App() {
     <>
       <div className="App">
         <div className="">
-          <header className="App-header">
               <RouterProvider  router={router} />
-          </header>
         </div>
       </div>
     </>

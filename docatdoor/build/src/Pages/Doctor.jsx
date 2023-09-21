@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { FetchDoctorDetials } from "../hocks/FetchDoctorDetails";
-import styles from "./doctor.module.scss"
+import styles from "../Components/SCSS/doctor.module.scss"
 
 function Doctor() {
     const [email, setEmail] = useState("");

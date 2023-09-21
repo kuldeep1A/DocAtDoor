@@ -1,4 +1,4 @@
-import styles from "./error.module.scss"
+import styles from "../Components/SCSS/error.module.scss"
 
 const Error = () => {
   return (
