@@ -3,10 +3,13 @@ import img1 from '../Assets/Images/HomeImages/doctor.png'
 import img2 from '../Assets/Images/HomeImages/nurse.png'
 import img3 from '../Assets/Images/HomeImages/examination.png'
 import img4 from '../Assets/Images/HomeImages/nutritionist.png'
+import img5 from '../Assets/Images/HomeImages/medical-checkup.png'
+import img6 from '../Assets/Images/HomeImages/hospital.png'
+import { ReviewSlider } from '../Components/ReviewSlider'
+import '../App.css'
+import { Footer } from '../Components/Footer'
 
 export const Home = () => {
-
-  const images = [img1, img2, img3, img4]
 
   return (
     <div className='w-full'>
@@ -73,11 +76,54 @@ export const Home = () => {
       </div>
 
       {/* third section  */}
-      <div className='bg-gradient-to-r from-sky-200 via-sky-100 to-transparent min-h-max py-8'>
-          <h2>
+      <div className='bg-gradient-to-r from-sky-200 via-sky-100 to-transparent min-h-max py-8 
+      flex flex-col justify-center items-center gap-10 pt-[5rem]'>
+          <h2 className='text-[3rem] text-gray-600 font-medium'>
             What we Offer?
           </h2>
+          <div className='w-9/12 flex flex-col items-center gap-[5rem]'>
+          {/* for Doctors */}
+            <div className='flex flex-row items-center  px-5 py-3 rounded-lg border-r-[5px]  border-sky-600 gap-8 w-[80%] shadow-md'>
+              <p className='text-[1rem] text-gray-600'>
+                <span className='text-3xl text-sky-600 font-medium'>If You are a healthcare Professional... </span><br/>
+                Our website offers a comprehensive platform for doctors like you to efficiently manage and grow your patient base. With our user-friendly interface, you can easily set up your profile, list your services, and manage appointments, all in one place. 
+              </p>
+              <img
+                src={img5}
+                alt='healthcare professional'
+                className='w-[200px]'
+              />
+            </div>
+
+            {/* for patients  */}
+            <div className='flex flex-row items-center  px-5 py-3 rounded-lg border-l-[5px] border-sky-600 gap-8 w-[80%] shadow-md'>
+              <img
+                src={img6}
+                alt='healthcare professional'
+                className='w-[200px]'
+              />
+              <p className='text-[1rem] text-gray-600'>
+                <span className='text-3xl text-sky-600 font-medium'>If You are seeking a medical advice... </span><br/>
+                Our platform simplifies the appointment booking process, allowing you to schedule consultations and treatments at your convenience. You can explore doctor profiles, read patient reviews, and access valuable healthcare resources, all in one place. 
+              </p>
+              
+            </div>
+          </div>
       </div>
+
+      {/* fourth section --> reviews  */}
+      <div className='bg-gradient-to-l from-sky-200 via-sky-100 to-transparent min-h-max py-8 flex flex-col justify-center gap-10'>
+        <h3 className='text-[3rem] text-gray-600 font-medium text-center'>
+          Reviews from Our Patients
+        </h3>
+
+        <div className='w-10/12 mx-auto'>
+        <ReviewSlider/>
+        </div>
+      </div>
+
+      {/* fifth section  */}
+      <Footer/>
     </div>
   )
 }
