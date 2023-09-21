@@ -6,6 +6,7 @@ const Doctors = collection(database, "Doctors");
 
 var Filed = [{}]
 function setFiled(data) {
+    console.log("data: ", data);
     Filed = data;
 }
 
@@ -18,7 +19,10 @@ export const FetchDoctorDetials = (DoctorEmail) => {
         if (DoctorEmail){where
             const _query = query(Doctors)
             onSnapshot(_query, (response) => {
-                console.log(response);
+                setFiled(response.docs.map((item)=>{
+                    console.log("response: ", item.data(), item.id);
+                    return {...item.data(), id: item.id}
+                }))
             })
 
         }
