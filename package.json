@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.6.3",
+    "sass": "^1.67.0"
+  },
+  "dependencies": {
+    "firebase": "^10.4.0"
+  }
+}
