@@ -7,23 +7,24 @@ export const Components = ()=>{
 }
 
 export const DoctorList = (lists)=>{
-    
+    console.log("doctors")
     if (lists.length <= 0){
 
-        
+        console.log("lists")
+        console.log(lists)
         return (<h1>NullHello</h1>)
     }
     
-    return (<h1>Hi hello</h1>)
-
+    
     var data = []
-
+    
     for (let i = 0; i < lists.length; i++) {
         const element = lists[i];
         data.push(<DoctorCard Name={element.Name} Specialization={element.Specialization} />)
     }
-
+    
     console.log("Data: ", data);
+    return (<h1>Hi hello</h1>)
 
     // return (
     //     <div>

@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { DoctorList } from "./Components"
+// import { useState } from 'react';
+// import { DoctorList } from "./Components"
 
-var data = {
-    Category: "Fever",
-    age: 15, 
-    locality: "Mandsaur"
-}
+// var data = {
+//     Category: "Fever",
+//     age: 15, 
+//     locality: "Mandsaur"
+// }
 
 var dd = {
     Vehdat: {
