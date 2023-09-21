@@ -7,11 +7,10 @@ export const Components = ()=>{
 }
 
 export const DoctorList = (lists)=>{
-    console.log("doctors")
+    
     if (lists.length <= 0){
 
-        console.log("lists")
-        console.log(lists)
+        
         return (<h1>NullHello</h1>)
     }
     
