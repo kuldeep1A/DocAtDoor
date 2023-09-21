@@ -9,7 +9,7 @@ import NavBar from '../Navbar';
 // http.get('/test', (res))
 
 var list = []
-var ui = [<div>Empty</div>]
+var ui = []
 
 export const Sform = ()=>{
     const [name, setName] = useState('');
@@ -37,6 +37,7 @@ export const Sform = ()=>{
             <form className='form' onSubmit={SubmitHandler}>
                 <label htmlFor="">Name</label>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                <label htmlFor="">Disease</label>
                 <input type="text" value={disease} onChange={(e) => setDisease(e.target.value)} />
                 <input className='submit' type="submit" value={"Search"}/>
             </form>

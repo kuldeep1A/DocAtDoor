@@ -15,9 +15,37 @@ var dd = {
         Schedule: "1-4",
         Experience: 15
     },
-    KD: {
-        Name: "KD",
+    KullDeep: {
+        Name: "Kuldeep",
+        Specialization: "Cold",
+        Rating: "⭐⭐⭐⭐",
+        Schedule: "1-4",
+        Experience: 15
+    },
+    Harish: {
+        Name: "Harish",
         Specialization: "Fever",
+        Rating: "⭐⭐⭐⭐",
+        Schedule: "1-4",
+        Experience: 15
+    },
+    Jyoti: {
+        Name: "Jyoti",
+        Specialization: "Cold",
+        Rating: "⭐⭐⭐⭐",
+        Schedule: "1-4",
+        Experience: 15
+    },
+    Virendra: {
+        Name: "Virendra",
+        Specialization: "Cold",
+        Rating: "⭐⭐⭐⭐",
+        Schedule: "1-4",
+        Experience: 15
+    },
+    Aayush: {
+        Name: "Aayush",
+        Specialization: "rabies",
         Rating: "⭐⭐⭐⭐",
         Schedule: "1-4",
         Experience: 15

@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import logo from '../Assets/Logo/logo.png'
 import styles from './navbar.module.scss'
 
 const NavBar = () => {
+    const navigate = useNavigate()
     const NavbarLinks = [
         {
           title: "Home",
@@ -9,7 +11,7 @@ const NavBar = () => {
         },
         {
           title: "Doctors",
-          path: '/doctor',
+          path: '/test',
         },
         {
           title: "About Us",
@@ -66,11 +68,11 @@ const NavBar = () => {
                     </div>
                     <div className='flex flex-row gap-x-3'>
                         <button className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
-                        hover:bg-sky-600 hover:text-white'>
+                        hover:bg-sky-600 hover:text-white' onClick={() => navigate("/login")}>
                             Login
                         </button>
                         <button className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
-                            hover:bg-sky-600 hover:text-white'>
+                            hover:bg-sky-600 hover:text-white' onClick={() => navigate("/register")}>
                             Signup
                         </button>
                     </div>
