@@ -3,6 +3,9 @@ import About from "./pages/About"
 import Error from "./pages/Error"
 import Contact from "./pages/Contact"
 import Doctor from "./pages/Doctor"
+import { Sform } from "./Components/Filter/sform"
+import LoginForm from "./Pages/LoginForm"
+import RegisterForm from "./Pages/RegisterForm"
 
 import {
   createBrowserRouter,
@@ -26,6 +29,18 @@ const router = createBrowserRouter([
   {
     path: "contact",
     element: <Contact/>
+  },
+  {
+    path: "/test",
+    element: <Sform/>
+  },
+  {
+    path: "/login",
+    element: <LoginForm/>
+  },
+  {
+    path: "/register",
+    element: <RegisterForm/>
   },
   {
     path: "*",
