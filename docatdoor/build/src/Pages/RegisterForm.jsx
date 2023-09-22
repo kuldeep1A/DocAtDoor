@@ -10,6 +10,7 @@ function RegisterForm() {
     const [age, setAge] = useState("");
     const [gender, setGender] = useState("");
     const [email, setEmail] = useState("");
+    const [specialization, setSpecialization] = useState("");
     const [password, setPassword] = useState("");
     const [isDoctor, setIsDoctor] = useState(false);
     const navigate = useNavigate();
@@ -17,8 +18,15 @@ function RegisterForm() {
 
 
     console.log(isDoctor);
+    var doctorField = <div className={styles.login__box}>
+            <input type="text" value={specialization} onChange={(e)=>setSpecialization(e.target.value)} placeholder="Specialization" required className={styles.login__input}/>
+                     </div>
+    if (!isDoctor){
+      doctorField = []
+    }
+
     const HandleForm = (e)=>{
-        e.preventDefault();
+      //   e.preventDefault();
         console.log("email: ", email);
         console.log("pass: ", password);
         const details = {
@@ -30,6 +38,7 @@ function RegisterForm() {
         }
         if (isDoctor) {
          console.log("call doctor");
+         details['Specialization'] = specialization
          doctorRegister(details)
         } else {
          console.log("call patinet");
@@ -51,7 +60,7 @@ function RegisterForm() {
         <>
         <NavBar />
         <div className={styles.login}>
-         <img src={bg2} alt="image" className={styles.login__bg}/>
+         <img style={{position: "fixed"}} src={bg2} alt="image" className={styles.login__bg}/>
          <form action="" className={styles.login__form}>
             <h1 className={styles.login__title}>Register</h1>
 
@@ -69,6 +78,7 @@ function RegisterForm() {
                   <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email ID" required className={styles.login__input}/>
                </div>
                
+               {doctorField}
 
                <div className={styles.login__box}>
                   <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required className={styles.login__input}/>

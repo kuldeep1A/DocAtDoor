@@ -55,10 +55,39 @@ img {
   background-color: hsla(0, 0%, 100%, .01);
   border: 2px solid hsla(0, 0%, 100%, .7);
   padding: 2.5rem 1rem;
+  margin-bottom: 6rem;
   color: var(--white-color);
-  border-radius: 1rem;
+  border-radius: 1em;
   backdrop-filter: blur(16px);
+  
+  height: 30rem;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
+
+.login__form::-webkit-scrollbar {
+  width: 0.5em;
+  // border-radius: 1rem;
+}
+
+.login__form::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.login__form::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  outline: 1px solid slategrey;
+  border-radius: 1em;
+  mask-clip: "view-box";
+  transform: scaleX(1000);
+}
+
+// .login__form{
+//   background-color: #fed9ff;
+//   width: 600px;
+//   text-align: center;
+//   padding: 20px;
+// }
 
 .login__title {
   text-align: center;

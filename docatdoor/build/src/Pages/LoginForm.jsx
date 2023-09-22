@@ -18,10 +18,10 @@ function LoginForm() {
         e.preventDefault();
         var loggedIn = false
         if(FetchUser(name, password)){
+         console.log("loggedIn");
          setloggedIn(true);
          navigate('/');
         }
-        console.log(loggedIn);
 
     }
     console.log(loggedIn);

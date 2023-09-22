@@ -21,7 +21,7 @@ export const FetchUser = (UserEmail, Password) => {
     }
     getDetails();
     console.log("Filed: ", Filed );
-    if (Filed[0].Password !== Password){
+    if (Filed == []){
         return false;
     }
     return true;

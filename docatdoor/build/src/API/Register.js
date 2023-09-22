@@ -11,6 +11,7 @@ export const doctorRegister = async (RegDetials) => {
         await addDoc(docotrCollection, {
             Name: RegDetials.Name,
             Email: RegDetials.Email,
+            Specialization: RegDetials.Specialization,
             Password: RegDetials.Password,
             Gender: RegDetials.Gender,
             Age: RegDetials.Age,
