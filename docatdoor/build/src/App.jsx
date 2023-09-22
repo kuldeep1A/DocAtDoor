@@ -1,8 +1,11 @@
-import Home from "./pages/Home"
-import About from "./pages/About"
+import Home from "./Pages/Home"
+import About from "./Pages/About"
 import Error from "./pages/Error"
 import Contact from "./pages/Contact"
 import Doctor from "./pages/Doctor"
+import { Sform } from "./Components/Filter/sform"
+import LoginForm from "./Pages/LoginForm"
+import RegisterForm from "./Pages/RegisterForm"
 
 import {
   createBrowserRouter,
@@ -10,10 +13,11 @@ import {
 } from "react-router-dom";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home />
   },
   {
     path: "about",
@@ -28,6 +32,18 @@ const router = createBrowserRouter([
     element: <Contact/>
   },
   {
+    path: "/test",
+    element: <Sform/>
+  },
+  {
+    path: "/login",
+    element: <LoginForm/>
+  },
+  {
+    path: "/register",
+    element: <RegisterForm/>
+  },
+  {
     path: "*",
     element: <Error />
   }
@@ -38,9 +54,7 @@ function App() {
     <>
       <div className="App">
         <div className="">
-          <header className="App-header">
               <RouterProvider  router={router} />
-          </header>
         </div>
       </div>
     </>

@@ -1,11 +1,12 @@
 import { useState } from "react"
 import { FetchDoctorDetials } from "../hocks/FetchDoctorDetails";
-import styles from "./pages.module.scss"
+import styles from "../Components/SCSS/doctor.module.scss"
 
 function Doctor() {
     const [email, setEmail] = useState("");
     const availableDoc = () => {
-      console.log(FetchDoctorDetials(email));
+      const { filed } = FetchDoctorDetials(email);
+      console.log(filed);
     }
     return (
       <>

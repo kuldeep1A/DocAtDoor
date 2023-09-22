@@ -3,14 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-
 const firebaseConfig = {
-  apiKey: "AIzaSyCMToFQaTidTrazJkvVoNF5SHEhHDknJUM",
-  authDomain: "docatdoor-1a.firebaseapp.com",
-  projectId: "docatdoor-1a",
-  storageBucket: "docatdoor-1a.appspot.com",
-  messagingSenderId: "404197994812",
-  appId: "1:404197994812:web:9bce7388b64a04a4abee39"
+  apiKey: `${import.meta.env.REACT_APP_API_KEY}`,
+  authDomain: `${import.meta.env.REACT_APP_API_KEY}`,
+  projectId: `${import.meta.env.REACT_APP_API_KEY}`,
+  storageBucket: `${import.meta.env.REACT_APP_API_KEY}`,
+  messagingSenderId: `${import.meta.env.REACT_APP_API_KEY}`,
+  appId: `${import.meta.env.REACT_APP_API_KEY}`
 
 };
   

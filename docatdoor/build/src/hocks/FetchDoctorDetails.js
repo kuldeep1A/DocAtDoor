@@ -1,6 +1,5 @@
 import { database } from "../firebase";
-import { onSnapshot, collection, where, query } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { onSnapshot, collection, query } from "firebase/firestore";
 
 const Doctors = collection(database, "Doctors");
 
@@ -13,11 +12,10 @@ function setFiled(data) {
 export const FetchDoctorDetials = (DoctorEmail) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     // const [Filed, setFiled] = useState([{}]);
-    setFiled([{}])
 
     // // eslint-disable-next-line react-hooks/exhaustive-deps
     const getDetails = () => {
-        if (DoctorEmail){where
+        if (DoctorEmail){
             const _query = query(Doctors)
             onSnapshot(_query, (response) => {
                 setFiled(response.docs.map((item)=>{

@@ -1,0 +1,43 @@
+.main {
+    margin: 0;
+}
+
+.NavItem {
+    display: block;
+    user-select: none;
+}
+.NavItemMobile {
+    display: flex;
+    flex-direction: column;
+}
+.hamburger_container {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+}
+.hamburger_line {
+    display: block;
+    background-color: #191414;
+    margin: 4px 0;
+    width: 25px;
+    height: 1px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.hamburger_line:nth-child(2) {
+    background: none;
+}
+
+@media screen and (max-width: 820px) {
+    .NavItem {
+        display: none;
+    }
+    .hamburger_container {
+        display: block;
+    }
+}
