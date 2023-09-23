@@ -36,7 +36,7 @@ img {
 
 .login {
   position: relative;
-  height: 100vh;
+  // height: 100vh;
   display: grid;
   align-items: center;
 }
@@ -55,6 +55,7 @@ img {
   background-color: hsla(0, 0%, 100%, .01);
   border: 2px solid hsla(0, 0%, 100%, .7);
   padding: 2.5rem 1rem;
+  margin-top: 7.5%;
   color: var(--white-color);
   border-radius: 1rem;
   backdrop-filter: blur(16px);

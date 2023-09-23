@@ -63,7 +63,7 @@ function RegisterForm() {
         <>
         <NavBar />
         <div className={styles.login}>
-         <img style={{position: "fixed"}} src={bg2} alt="image" className={styles.login__bg}/>
+         <img style={{position: "fixed", zIndex: -1}} src={bg2} alt="image" className={styles.login__bg}/>
          <form action="" className={styles.login__form}>
             <h1 className={styles.login__title}>Register</h1>
 

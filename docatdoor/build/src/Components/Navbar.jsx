@@ -41,7 +41,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="w-full h-[100px] shadow-md flex flex-row justify-between items-center px-4">
+            <div style={{backgroundColor: 'white'}} className="w-full h-[100px] shadow-md flex flex-row justify-between items-center px-4">
                 <div className='flex flex-row'>
                     <a href='/' className='flex flex-row items-center '>
                     <img src={logo}
@@ -69,7 +69,7 @@ const NavBar = () => {
                         </nav>
                     </div>
                     <div className='flex flex-row gap-x-3'>
-                        <button disabled={loggedIn} style={{display: loggedIn?"none":"block"}} className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
+                        <button disabled={loggedIn} style={{display: loggedIn?"none":"block"}}className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
                         hover:bg-sky-600 hover:text-white' onClick={() => navigate("/login")}>
                             Login 
                         </button>

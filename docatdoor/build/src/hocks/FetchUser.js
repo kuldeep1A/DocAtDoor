@@ -3,16 +3,17 @@ import { onSnapshot, collection, where, query } from "firebase/firestore";
 
 
 const DoctorsData = collection(database, "DoctorsRegister");
+const PatientsData = collection(database, "PatientRegister");
 
 var Filed = [{}]
 function setFiled(data) {
     Filed = data;
 }
-export const FetchUser = (UserEmail, Password, event) => {
+export const FetchUser = (UserEmail, Password, isDoctor, event) => {
     // const [Filed, setFiled] = useState([{}]);
 
     var flag = false;
-    const _query = query(DoctorsData, where("Email", "==", UserEmail, "and", "Password", "==", Password))
+    const _query = query(isDoctor?DoctorsData:PatientsData, where("Email", "==", UserEmail, "and", "Password", "==", Password))
     const getDetails = ()=>{
         onSnapshot(_query, (response) => {
             setFiled(response.docs.map((item)=>{
