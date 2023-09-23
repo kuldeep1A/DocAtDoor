@@ -24,7 +24,7 @@ export const Sform = ()=>{
 
         for(let i = 0; i < list.length; i++){
             const ele = list[i]
-            ui.push(<DocUi Name={ele.Name} Specialization={ele.Specialization} Rating={ele.Rating}/>)
+            ui.push(<DocUi Name={ele.Name} Specialization={ele.Specialization} Rating={ele.Rating} Id={ele.Id}/>)
         }
         // console.log("UI");
         // console.log(ui);
@@ -47,12 +47,15 @@ export const Sform = ()=>{
 }
 
 function DocUi(params) {
+    function pr(params) {
+        console.log("params: ", params);
+    }
     return(
         <center className={styles.item}>
             <h2>Dr. {params.Name}</h2>    
             <h2>Spec. {params.Specialization}</h2>    
             <h2>Rating {params.Rating}</h2>    
-            <button>Book</button>
+            <button onClick={()=>pr(params.Id)}>Book</button>
         </center>
     )
 }

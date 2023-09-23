@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import logo from '../Assets/Logo/logo.png'
 import styles from './SCSS/navbar.module.scss'
+import { loggedIn } from "../Pages/LoginForm";
 
 const NavBar = () => {
     const navigate = useNavigate()
@@ -36,6 +37,7 @@ const NavBar = () => {
         }
         
       }
+      console.log("Hello: ", loggedIn);
 
     return (
         <>
@@ -67,11 +69,11 @@ const NavBar = () => {
                         </nav>
                     </div>
                     <div className='flex flex-row gap-x-3'>
-                        <button className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
+                        <button disabled={loggedIn} style={{display: loggedIn?"none":"block"}} className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
                         hover:bg-sky-600 hover:text-white' onClick={() => navigate("/login")}>
-                            Login
+                            Login 
                         </button>
-                        <button className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
+                        <button disabled={loggedIn} style={{display: loggedIn?"none":"block"}} className='border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
                             hover:bg-sky-600 hover:text-white' onClick={() => navigate("/register")}>
                             Signup
                         </button>

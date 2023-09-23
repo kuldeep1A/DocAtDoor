@@ -67,19 +67,23 @@ img {
 
 .login__form::-webkit-scrollbar {
   width: 0.5em;
+  clip: auto;
   // border-radius: 1rem;
 }
 
 .login__form::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
+
 
 .login__form::-webkit-scrollbar-thumb {
   background-color: rgb(255, 255, 255);
   outline: 1px solid slategrey;
+  height: 10px;
+  max-height: 50%;
   border-radius: 1em;
-  mask-clip: "view-box";
-  transform: scaleX(1000);
 }
 
 // .login__form{

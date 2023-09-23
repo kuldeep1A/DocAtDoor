@@ -6,22 +6,22 @@ import styles from "../Components/SCSS/loginform.module.scss";
 import { useNavigate } from 'react-router-dom';
 
 
+export var loggedIn = false;
 
 function LoginForm() {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-    const [loggedIn, setloggedIn] = useState(false)
     const navigate = useNavigate()
 
 
     const HandleForm = (e)=>{
         e.preventDefault();
-        var loggedIn = false
-        if(FetchUser(name, password)){
-         console.log("loggedIn");
-         setloggedIn(true);
-         navigate('/');
-        }
+        FetchUser(name, password, (data)=>{
+         if (data.length > 0){
+            loggedIn = true;
+            navigate('/')
+         }
+        })
 
     }
     console.log(loggedIn);

@@ -5,8 +5,7 @@ import styles from "../Components/SCSS/doctor.module.scss"
 function Doctor() {
     const [email, setEmail] = useState("");
     const availableDoc = () => {
-      const { filed } = FetchDoctorDetials(email);
-      console.log(filed);
+      const { filed } = FetchDoctorDetials();
     }
     return (
       <>

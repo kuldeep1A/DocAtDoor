@@ -4,6 +4,7 @@ import { doctorRegister, patientRegister } from "../API/Register"
 import bg2 from '../assets/loginImg/bg2.webp'
 import { useNavigate } from 'react-router-dom';
 import styles from "../Components/SCSS/registerform.module.scss"
+import { doc } from '@firebase/firestore';
 
 function RegisterForm() {
     const [name, setName] = useState("");
@@ -13,17 +14,19 @@ function RegisterForm() {
     const [specialization, setSpecialization] = useState("");
     const [password, setPassword] = useState("");
     const [isDoctor, setIsDoctor] = useState(false);
-    const navigate = useNavigate();
     
+    const navigate = useNavigate();
 
 
     console.log(isDoctor);
+
     var doctorField = <div className={styles.login__box}>
             <input type="text" value={specialization} onChange={(e)=>setSpecialization(e.target.value)} placeholder="Specialization" required className={styles.login__input}/>
                      </div>
-    if (!isDoctor){
+
+   if (!isDoctor){
       doctorField = []
-    }
+   }
 
     const HandleForm = (e)=>{
       //   e.preventDefault();
