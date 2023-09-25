@@ -85,6 +85,15 @@ const NavBar = () => {
             >
               Signup
             </button>
+            <button
+              disabled={!loggedIn}
+              style={{ display: !loggedIn ? "none" : "block" }}
+              className="border-2 border-sky-500 text-sky-600 px-3 py-2 rounded-md font-medium uppercase
+                            hover:bg-sky-600 hover:text-white"
+              onClick={() => navigate("/profile")}
+            >
+              Profile
+            </button>
           </div>
           <div onClick={showNavBar} className={styles.hamburger_container}>
             <div className={styles.hamburger_line}></div>

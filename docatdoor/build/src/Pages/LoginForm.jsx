@@ -20,7 +20,8 @@ function LoginForm() {
     FetchUser(name, password, isDoctor, (data) => {
       if (data.length > 0) {
         loggedIn = true;
-        currentUser = data[0].id;
+        currentUser = data[0];
+        delete currentUser.Password
         navigate("/");
       }
     });
