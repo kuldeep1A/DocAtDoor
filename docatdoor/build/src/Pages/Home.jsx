@@ -51,7 +51,7 @@ const Home = () => {
             </div>
 
             <div className='flex flex-col items-center gap-2'>
-              <h1 className='text-sky-600 font-bold text-4xl'>
+              <h1 className={`text-sky-600 font-bold text-4xl ${styles.apointment}`}>
                 Get An Appointment
               </h1>
               <p className='text-md text-gray-600 w-[80%] text-center'>
@@ -66,7 +66,7 @@ const Home = () => {
       </div>
 
       {/*second section --> quote */}
-      <div className='bg-sky-600 h-[200px] text-4xl text-center flex items-center justify-center'>
+      <div className={`bg-sky-600 h-[200px] text-4xl text-center flex items-center justify-center ${styles.quote}`}>
         <p className='w-[90%] text-sky-100 font-medium leading-normal'>
           Your <span className='text-pink-700'> health </span> 
           and <span className='text-pink-700'> well-being </span> 
