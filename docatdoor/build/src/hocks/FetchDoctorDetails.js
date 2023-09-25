@@ -15,21 +15,21 @@ export const FetchDoctorDetials = (event) => {
 
     // // eslint-disable-next-line react-hooks/exhaustive-deps
     var flag = false;
-    const  getDetails = () => {
-            const _query = query(Doctors)
-            onSnapshot(_query, (response) => {
-                setFiled(response.docs.map((item)=>{
-                    console.log("response: ", item.data(), item.id);
-                    flag = true;
-                    return {...item.data(), id: item.id}
-                }))
-            })
+    const getDetails = () => {
+        const _query = query(Doctors)
+        onSnapshot(_query, (response) => {
+            setFiled(response.docs.map((item) => {
+                console.log("response: ", item.data(), item.id);
+                flag = true;
+                return { ...item.data(), id: item.id }
+            }))
+        })
     }
 
     getDetails();
 
     const i = setInterval(() => {
-        if (flag){
+        if (flag) {
             clearInterval(i);
             event(Filed);
         }

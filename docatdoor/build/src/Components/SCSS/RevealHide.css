@@ -1,31 +1,31 @@
-:root{
-    --height: 100%;
-    --box-height: 4rem;
+:root {
+  --height: 100%;
+  --box-height: 4rem;
 }
 
-.box{
-    height: var(--box-height);
-    align-items: center;
-    border: 2px solid hsla(0, 0%, 100%, .7);
-    padding-inline: 1.25rem;
-    border-radius: 4rem;
-    opacity: var(--height);
-    transition: all 1s;
+.box {
+  height: 4rem;
+  align-items: center;
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding-inline: 1.25rem;
+  border-radius: 4rem;
+  opacity: 100%;
+  transition: all 1s;
 }
 
-.reveal{
-    border: none;
-    outline: none;
-    height: var(--height);
-    background-color: #00000000;
-    color: white;
-    padding: calc(1.10rem*var(--height));
-    padding-inline: 0;
-    opacity: var(--height);
-    transition: all 1s;
-  }
+.reveal {
+  border: none;
+  outline: none;
+  height: 100%;
+  background-color: #00000000;
+  color: white;
+  padding: calc(1.10rem*100%);
+  padding-inline: 0;
+  opacity: 100%;
+  transition: all 1s;
+}
 
-  .reveal::placeholder{
-    font-weight: 600;
-    color: white;
-  }
+.reveal::placeholder {
+  font-weight: 600;
+  color: white;
+}
