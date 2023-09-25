@@ -63,6 +63,8 @@ img {
   height: 30rem;
   overflow-x: hidden;
   overflow-y: auto;
+
+  scroll-behavior: smooth;
 }
 
 .login__form::-webkit-scrollbar {
@@ -107,6 +109,7 @@ img {
 .login__inputs {
   row-gap: 1.25rem;
   margin-bottom: 1rem;
+
 }
 
 .login__box {
@@ -130,6 +133,8 @@ img {
   color: var(--white-color);
   padding-block: 1rem;
   font-weight: 600;
+
+  transition: all 1s;
 }
 
 .login__input::placeholder {

@@ -66,7 +66,7 @@ function LoginForm() {
             </center>
 
             <div className={styles.login__register}>
-               Don&apos;t have an account? <a href="#">Register</a>
+               Don&apos;t have an account? <a onClick={()=>navigate('/Register')}>Register</a>
             </div>
          </form>
       </div>

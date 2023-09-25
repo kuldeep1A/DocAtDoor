@@ -4,7 +4,9 @@ import { doctorRegister, patientRegister } from "../API/Register"
 import bg2 from '../assets/loginImg/bg2.webp'
 import { useNavigate } from 'react-router-dom';
 import styles from "../Components/SCSS/registerform.module.scss"
+import "../Components/SCSS/RevealHide.css"
 import { doc } from '@firebase/firestore';
+import { Slider } from '../Components/slider';
 
 function RegisterForm() {
     const [name, setName] = useState("");
@@ -13,20 +15,16 @@ function RegisterForm() {
     const [email, setEmail] = useState("");
     const [specialization, setSpecialization] = useState("");
     const [password, setPassword] = useState("");
-    const [isDoctor, setIsDoctor] = useState(false);
+    const [isDoctor, setIsDoctor] = useState(true);
     
     const navigate = useNavigate();
-
+    
 
     console.log(isDoctor);
+    document.documentElement.style.setProperty("--height", isDoctor?"100%":"0")
+    document.documentElement.style.setProperty("--box-height", isDoctor?"4rem":"0rem")
+    document.documentElement.style.setProperty("--pad-height", isDoctor?"1.25rem":"0rem")
 
-    var doctorField = <div className={styles.login__box}>
-            <input type="text" value={specialization} onChange={(e)=>setSpecialization(e.target.value)} placeholder="Specialization" required className={styles.login__input}/>
-                     </div>
-
-   if (!isDoctor){
-      doctorField = []
-   }
 
     const HandleForm = (e)=>{
       //   e.preventDefault();
@@ -81,17 +79,23 @@ function RegisterForm() {
                   <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email ID" required className={styles.login__input}/>
                </div>
                
-               {doctorField}
+               <div className={'box'}>
+                  <input type="text" value={specialization} onChange={(e)=>setSpecialization(e.target.value)} placeholder="Specialization" required className={"reveal"}/>
+                  {/* <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required className={styles.login__input}/> */}
+               </div>
 
                <div className={styles.login__box}>
                   <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required className={styles.login__input}/>
                </div>
             </div>
 
-            <div className="flex flex-col">
-                <label htmlFor="user-type " className="block">Are you Doctor ?</label>
-                <input type="checkbox" value={isDoctor} onChange={(e)=>setIsDoctor(e.target.checked)} className={`block ${styles.login__check__input}`} id="user-type"/>
-            </div>
+            <center style={{fontWeight: 'bold'}}>
+               <label style={{color: isDoctor?"white":"#FFFFFF15"}} htmlFor="">Doctor</label>
+               <Slider onClick={()=>setIsDoctor(!isDoctor)} Color="#33B099"/>
+               <label style={{color: isDoctor?"#FFFFFF15":"white"}} htmlFor="">Patient</label>
+               <br />
+               <br />
+            </center>
 
             <button style={{backgroundColor: 'white'}} type="submit" onClick={HandleForm} className={styles.login__button}>Register</button>
 
