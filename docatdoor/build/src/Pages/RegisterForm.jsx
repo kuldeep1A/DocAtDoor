@@ -13,6 +13,7 @@ function RegisterForm() {
     const [age, setAge] = useState("");
     const [gender, setGender] = useState("");
     const [email, setEmail] = useState("");
+    const [address, setAddress] = useState("");
     const [specialization, setSpecialization] = useState("");
     const [password, setPassword] = useState("");
     const [isDoctor, setIsDoctor] = useState(true);
@@ -36,6 +37,7 @@ function RegisterForm() {
          Password: password,
          Gender: gender,
          Age: age,
+         Address: address
         }
         if (isDoctor) {
          console.log("call doctor");
@@ -77,6 +79,9 @@ function RegisterForm() {
                </div>
                <div className={styles.login__box}>
                   <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email ID" required className={styles.login__input}/>
+               </div>
+               <div className={styles.login__box}>
+                  <input type="address" value={address} onChange={(e)=>setAddress(e.target.value)} placeholder="Address" required className={styles.login__input}/>
                </div>
                
                <div className={'box'}>

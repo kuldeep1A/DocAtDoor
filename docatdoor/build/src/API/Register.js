@@ -15,6 +15,7 @@ export const doctorRegister = async (RegDetials) => {
             Password: RegDetials.Password,
             Gender: RegDetials.Gender,
             Age: RegDetials.Age,
+            Address: RegDetials.Address
         });
     } catch (error) {
         console.log(error);
@@ -31,6 +32,7 @@ export const patientRegister = async (RegDetials) => {
             Password: RegDetials.Password,
             Gender: RegDetials.Gender,
             Age: RegDetials.Age,
+            Address: RegDetials.Address
         });
     } catch (error) {
         console.log(error);

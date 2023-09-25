@@ -3,6 +3,7 @@ import About from "./Pages/About"
 import Error from "./pages/Error"
 import Contact from "./pages/Contact"
 import Doctor from "./pages/Doctor"
+import PatientProfile from "./Pages/PatientProfile"
 import { Sform } from "./Components/Filter/sform"
 import LoginForm from "./Pages/LoginForm"
 import RegisterForm from "./Pages/RegisterForm"
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterForm/>
+  },
+  {
+    path: "/profile",
+    element: <PatientProfile/>
   },
   {
     path: "*",

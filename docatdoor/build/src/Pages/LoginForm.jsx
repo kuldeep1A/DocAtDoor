@@ -6,7 +6,7 @@ import styles from "../Components/SCSS/loginform.module.scss";
 import { useNavigate } from 'react-router-dom';
 import { Slider } from '../Components/slider';
 
-
+console.log("Set to false");
 export var loggedIn = false;
 export var currentUser = null
 
@@ -22,7 +22,9 @@ function LoginForm() {
         FetchUser(name, password, isDoctor, (data)=>{
          if (data.length > 0){
             loggedIn = true;
-            currentUser = data[0].id;
+            currentUser = data[0];
+            delete currentUser.Password
+            console.log("currentUser: ", currentUser);
             navigate('/')
          }
         })

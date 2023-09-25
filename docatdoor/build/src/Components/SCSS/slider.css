@@ -62,3 +62,7 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .lab{
+    padding-right: 5rem;
+  }
