@@ -18,10 +18,15 @@ function RegisterForm() {
   const [isDoctor, setIsDoctor] = useState(true);
 
   const navigate = useNavigate();
+
+  document.documentElement.style.setProperty("--height", isDoctor?"100%":"0%")
+  document.documentElement.style.setProperty("--box-height", isDoctor?"4rem":"0rem")
+
   const HandleForm = () => {
     //   e.preventDefault();
     console.log("email: ", email);
     console.log("pass: ", password);
+    
     const details = {
       Name: name,
       Email: email,
@@ -113,7 +118,7 @@ function RegisterForm() {
               />
             </div>
 
-            {isDoctor ?<div className={"box"}>
+            <div className={"box"}>
               <input
                 type="text"
                 value={specialization}
@@ -123,7 +128,7 @@ function RegisterForm() {
                 className={"reveal"}
               />
               {/* <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required className={styles.login__input}/> */}
-            </div> : <></>}
+            </div>
 
             <div className={styles.login__box}>
               <input
