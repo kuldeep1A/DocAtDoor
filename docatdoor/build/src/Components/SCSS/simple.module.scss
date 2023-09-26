@@ -1,3 +1,7 @@
+.scrollFix{
+    height: 101vh;
+}
+
 .item{
 
     display: flex;
@@ -54,6 +58,17 @@
     background-color: #70c7f0;
 }
 
+.gridBox{
+    display: grid;
+    margin-inline: 10%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem 1rem;
+    padding-bottom: 1rem;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-bottom: solid #4071db 5px;
+}
+
 .form{
     width: 100%;
     font-size: large;
@@ -80,10 +95,110 @@
     background-color: #4071db;
     padding-inline: 1rem;
     border-radius: 0.25rem;
+    grid-row-start: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
 
     transition: all 0.25s;
 }
 
 .form .submit:hover{
     background-color: #0ea5e9;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+    top: calc(50% - 18rem);
+    left: calc(50% - 15rem);
+    position: absolute;
+    // margin: 5%;
+    height: 36rem;
+    width: 30rem;
+
+    background-color: #c0c0c060;
+    border-radius: 1rem;
+
+    box-shadow: black 3px 0px 15px -5px;
+
+    // backdrop-filter: grayscale(1);
+
+}
+
+.details h1{
+    font-size: 3rem;
+    font-weight: bold;
+
+    color: #0ea5e9;
+    text-shadow: black 1px 1px, black -1px -1px, black 1px -1px, black -1px 1px;
+}
+.details label{
+    width: 100%;
+    padding-top: 1rem;
+
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+
+    color: #000000;
+    text-decoration: underline;
+
+}
+.details .field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: calc(100% + 1rem);
+    
+    border-top: solid black;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    backdrop-filter: blur(5px);
+    
+    transition: all 250ms;
+}
+
+.details .field:hover{
+    // backdrop-filter: blur(0px);
+    background-color: #0ea5e970;
+}
+
+.details .appointBtn{
+    position: absolute;
+    right: 0;
+
+    padding: 1rem;
+    margin-top: 3px;
+    margin-right: 0px;
+    padding-inline: 2rem;
+
+    font-weight: bold;
+
+    color: white;
+    background-color: #4071db;
+
+    border-right: solid black;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    transition: all 250ms;
+}
+.details .appointBtn:hover{
+    box-shadow: black -1px 1px 5px;
+}
+
+@keyframes rollout {
+    0% { transform: translateY(100%); }
+    100% { transform: none; }
+}
+  
+.rollouts {
+    animation: rollout 0.5s;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

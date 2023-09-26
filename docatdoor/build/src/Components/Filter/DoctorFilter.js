@@ -54,12 +54,12 @@ var dd = {
 
 export const CheckDoctor = (userData)=>{
     // var doctors = {}
-    FetchDoctorDetials((data)=>{
-        for (let i = 0; i < data.length; i++) {
-            const element = data[i];
-            console.log(`Element: ${element.Name}, ${element.Email}`);
-        }
-    })
+    // FetchDoctorDetials((data)=>{
+    //     for (let i = 0; i < data.length; i++) {
+    //         const element = data[i];
+    //         console.log(`Element: ${element.Name}, ${element.Email}`);
+    //     }
+    // })
 
     var keys = Object.keys(dd)
     var filtered_list = []
