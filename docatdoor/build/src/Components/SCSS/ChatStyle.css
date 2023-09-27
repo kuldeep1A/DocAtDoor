@@ -1,0 +1,171 @@
+.ChatWindow{
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    width: 25vw;
+    height: 60vh;
+    right: 0;
+    bottom: 0;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    
+    border: solid #317585;
+    border-radius: 1rem;
+    box-shadow: black 3px 3px 10px;
+    background-image: url(../../assets/Images/BGpattern.jpg);
+
+    /* height: 150vh; */
+    overflow-y: auto;
+}
+.ChatWindow::-webkit-scrollbar{
+    background-color: #3ec0de50;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.ChatWindow::-webkit-scrollbar-thumb{
+    background-color: #3ec0de;
+    border-radius: 1rem;
+}
+
+.ChatWindow .CloseBtn{
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    z-index: 2;
+    margin: -1rem;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    justify-content: center;
+
+    background-color: #3ec0de
+}
+
+.ChatSidebar{
+    position: fixed;
+    width: 8%;
+    height: 59%;
+
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-right: solid #00000050;
+
+    backdrop-filter: blur(2px);
+}
+
+.ChatBox{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.MessageView{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    
+    justify-content: flex-end;
+    text-align: left;
+    
+    border-top-right-radius: 1rem;
+}
+
+.Message{
+    margin-right: 1rem;
+    margin-left: auto;
+    max-width: 80%;
+    margin-bottom: 1rem;
+    padding-inline: 0.5rem;
+    border-radius: 10px;
+
+    color: white;
+    background-color: #3ec0de;
+}
+
+.Message .BubbleArrow{
+    position: absolute;
+    right: 5px;
+    /* margin-top: 2px; */
+    
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(2639%) hue-rotate(155deg) brightness(90%) contrast(92%);
+
+}
+
+.TypeBox{
+    position: fixed;
+    width: 15%;
+    bottom: 20px;
+    height: min-content;
+    
+    border-bottom-right-radius: 1rem;
+}
+
+.TypeBox .TypeField{
+    /* position: fixed; */
+    width: 75%;
+    max-height: 130px;
+
+    padding-left: 0.3rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    font-weight: 500;
+    
+    border: none;
+    border: none;
+    border-radius: 10px;
+    overflow-y: auto;
+    
+    color: white;
+    background-color: #000000A0;
+    backdrop-filter: blur(5px);
+
+}
+
+.TypeBox .SendBtn{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 2px;
+    margin-right: -2px;
+
+    border-radius: 50%;
+    background-color: #ffe4c4;
+    transition: all 250ms;
+}
+
+.TypeBox .SendBtn:hover{
+    background-color: #ffe4c4A0;
+}
+.TypeBox .SendBtn:active{
+    background-color: #ffe4c400;
+}
+
+.TypeBox .TypeField::-webkit-scrollbar{
+    width: 12px;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.TypeBox .TypeField::-webkit-scrollbar-thumb{
+    /* background-color: darkblue; */
+    background-color: rgb(100, 100, 100);
+    border-radius: 10px;
+}
+
+

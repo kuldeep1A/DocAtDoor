@@ -4,6 +4,7 @@ import { CheckDoctor } from './DoctorFilter'
 import NavBar from '../Navbar';
 import styles from '../SCSS/simple.module.scss'
 import { doc } from '@firebase/firestore';
+import ChatWindow from '../ChatWindows';
 
 // const http = require('http')
 
@@ -56,6 +57,7 @@ export const Sform = ()=>{
                     <input className={styles.submit} type="submit" value={"Search"}/>
                 </div>
             </form>
+            <ChatWindow/>
             <DocList Doctors={ui}/>
         </div>
     )
