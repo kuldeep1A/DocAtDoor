@@ -12,7 +12,10 @@ import ChatWindow from '../ChatWindows';
 
 var list = []
 var ui = []
-var renderDetails = true;
+var Det = <Details Doctor={{Name: "Hello", Specialization: "sad", Rating: "sadf" }}/>
+var renderDetails = false;
+
+var updateDetails;
 
 export const Sform = ()=>{
     const [name, setName] = useState('');
@@ -21,26 +24,28 @@ export const Sform = ()=>{
     const [gender, setGender] = useState();
     const [address, setAddress] = useState();
     const [render, setRender] = useState(true);
-
     // document.documentElement.style.overflow = "hidden";
-
+    updateDetails = ()=>{
+        setRender(!render)
+    };
     const SubmitHandler = (event) =>{
         event.preventDefault();
         var obj = {Name: name, Disease: disease}
-        list = CheckDoctor(obj)
         ui = []
+        CheckDoctor(obj, (list)=>{
+            for(let i = 0; i < list.length; i++){
+                const ele = list[i]
+                ui.push(<DocUi Name={ele.Name} Specialization={ele.Specialization} Rating={ele.Rating} Id={ele.Id}/>)
+            }
+            // console.log("UI");
+            // console.log(ui);
+            console.log(render);
+            setRender(!render)
+        })
 
-        for(let i = 0; i < list.length; i++){
-            const ele = list[i]
-            ui.push(<DocUi Name={ele.Name} Specialization={ele.Specialization} Rating={ele.Rating} Id={ele.Id}/>)
-        }
-        // console.log("UI");
-        // console.log(ui);
-        console.log(render);
-        setRender(!render)
     }
     return (
-        <div className={styles.scrollFix}>
+        <div>
             <NavBar/>
             <form className={styles.form} onSubmit={SubmitHandler}>
                 <div className={styles.gridBox}>
@@ -59,11 +64,10 @@ export const Sform = ()=>{
             </form>
             <ChatWindow/>
             <DocList Doctors={ui}/>
+            <div>{Det}</div>
         </div>
     )
 }
-
-var bookList = []
 
 function DocUi(params) {
     const [render, setRender] = useState(false)
@@ -80,15 +84,15 @@ function DocUi(params) {
     const book = (doctor)=>{
         // console.log("doctor book: ", doctor);
         // console.log("Ele: ", arr);
-        bookList = []
         renderDetails = true;
-        bookList.push(<Details redner={true} Doctor={params}/>)
+        Det = <Details Doctor={params}/>
+        updateDetails();
+        console.log("Details: ", params);
         console.log(render);
         setRender(!render)
     }
     return(
         <>
-        <div>{bookList}</div>
         <center className={styles.item}>
             <h2>Dr. {params.Name}</h2>    
             <h2>Spec. {params.Specialization}</h2>    
@@ -147,7 +151,8 @@ function Details(params){
                 <label>Rating</label>
                 <h1>{doctor.Rating}</h1>
             </center>
-            <button className={`${styles.appointBtn} ${styles.rollouts}`} onClick={()=>{hide()}}>Book</button>
+            <button className={`${styles.Btn} ${styles.closeBtn}`} onClick={()=>{hide()}}>Close</button>
+            <button className={`${styles.Btn} ${styles.appointBtn}`} onClick={()=>{hide()}}>Book</button>
             </div>
         : <></>}
 

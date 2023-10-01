@@ -7,10 +7,11 @@ import { useReducer, useState } from "react";
 import { doc } from "@firebase/firestore";
 
 var chat = [
-    <TextBubble side="left" msg="Hi"/>,
-    <TextBubble side="left" msg="Hello how are you feeling now?"/>,
+    <TextBubble side="right" msg="Hi"/>,
+    <TextBubble side="right" msg="How are you feeling now?"/>,
     <TextBubble side="left" msg="Much better than before, Thanks"/>,
-    <TextBubble side="right" msg="Ok great just in case if things get worse take a highh dosage of hte prescribed medicine, GoodBye"/>,
+    <TextBubble side="right" msg="Ok great just in case if things get worse take a double dosage of the prescribed medicine, GoodBye"/>,
+    <TextBubble side="left" msg="Ok, Thanks again bye"/>,
 ]
 var chat2 = [
     <TextBubble side="left" msg="Hi"/>,

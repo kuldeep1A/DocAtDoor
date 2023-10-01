@@ -52,26 +52,27 @@ var dd = {
     }
 }
 
-export const CheckDoctor = (userData)=>{
+export const CheckDoctor = (userData, event)=>{
     // var doctors = {}
-    // FetchDoctorDetials((data)=>{
-    //     for (let i = 0; i < data.length; i++) {
-    //         const element = data[i];
-    //         console.log(`Element: ${element.Name}, ${element.Email}`);
-    //     }
-    // })
+    FetchDoctorDetials((data)=>{
+        var filtered_list = []
+        var keys = Object.keys(dd)
 
-    var keys = Object.keys(dd)
-    var filtered_list = []
-
-    for (let i = 0; i < keys.length; i++) {
+        for (let i = 0; i < data.length; i++) {
+            const element = data[i];
+            console.log(`Element: ${element.Name}, ${element.Email}`);
+            filtered_list.push(element);
+        }
+        
+        
+        for (let i = 0; i < keys.length; i++) {
         const doctor = dd[keys[i]];
         // console.log(doctor);
         // console.log(userData);
-        if (doctor['Specialization'] === userData['Disease']){
-            filtered_list.push(doctor);
+        // if (doctor['Specialization'] === userData['Disease']){
+            //     filtered_list.push(doctor);
+            // }
         }
-    }
-
-    return filtered_list;
+    event(filtered_list)
+})
 }

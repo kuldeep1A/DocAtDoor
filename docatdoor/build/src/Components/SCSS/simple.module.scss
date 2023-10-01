@@ -1,7 +1,3 @@
-.scrollFix{
-    height: 101vh;
-}
-
 .item{
 
     display: flex;
@@ -114,7 +110,7 @@
     
     top: calc(50% - 18rem);
     left: calc(50% - 15rem);
-    position: absolute;
+    position: fixed;
     // margin: 5%;
     height: 36rem;
     width: 30rem;
@@ -169,28 +165,36 @@
     background-color: #0ea5e970;
 }
 
-.details .appointBtn{
+.details .Btn{
     position: absolute;
-    right: 0;
-
+    z-index: 10;
     padding: 1rem;
     margin-top: 3px;
     margin-right: 0px;
     padding-inline: 2rem;
 
     font-weight: bold;
-
     color: white;
-    background-color: #4071db;
-
-    border-right: solid black;
-    border-top-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
 
     transition: all 250ms;
 }
-.details .appointBtn:hover{
+.details .Btn:hover{
     box-shadow: black -1px 1px 5px;
+}
+
+.details .appointBtn{
+    right: 0;
+    background-color: #4071db;
+    border-right: solid black;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.details .closeBtn{
+    left: 0;
+    background-color: #db4040;
+    border-left: solid black;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 @keyframes rollout {
