@@ -1,9 +1,11 @@
 .ChatWindow{
+    --is-Enabled: none;
+    
     display: flex;
     flex-direction: column;
 
     position: fixed;
-    width: 25vw;
+    width: 30vw;
     height: 60vh;
     right: 0;
     bottom: 0;
@@ -46,7 +48,7 @@
     width: 3rem;
     height: 3rem;
     z-index: 2;
-    margin: -1rem;
+    margin: -1.5rem;
 
     border: solid #3ec0de;
     border-radius: 50%;
@@ -74,17 +76,6 @@
     
 }
 
-.ChatSidebar{
-    position: fixed;
-    width: 8%;
-    height: 59%;
-
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    border-right: solid #00000050;
-
-    backdrop-filter: blur(2px);
-}
 
 .ChatBox{
     position: absolute;
@@ -122,7 +113,7 @@
     padding-inline: 0.5rem;
     border-radius: 10px;
     word-wrap: break-word;
-
+    
     color: white;
     background-color: #3ec0de;
 }
@@ -135,7 +126,7 @@
 .Message .BubbleArrow{
     position: absolute;
     right: 5px;
-
+    
     width: 20px;
     height: 20px;
     filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(2639%) hue-rotate(155deg) brightness(90%) contrast(92%);
@@ -147,12 +138,11 @@
 }
 
 .TypeBox{
-    display: flex;
-    flex: 1;
+    display: var(--is-Enabled);
     position: fixed;
-    width: 15%;
-    bottom: 20px;
-
+    width: 18%;
+    bottom: 25px;
+    
     border-bottom-right-radius: 1rem;
 }
 
@@ -164,7 +154,7 @@
     padding-left: 0.3rem;
     margin-left: 0.5rem;
     margin-bottom: 0.5rem;
-
+    
     font-weight: 500;
     
     border: none;
@@ -175,14 +165,20 @@
     color: white;
     background-color: #000000A0;
     backdrop-filter: blur(5px);
-
+    transition: all 150ms;
+}
+.TypeBox .TypeField:hover{
+    background-color: #222222A0;
+}
+.TypeBox .TypeField:focus{
+    background-color: #000000A0;
 }
 
 .TypeBox .SendBtn{
     position: absolute;
     right: 0;
     bottom: 0;
-
+    
     width: 2.5rem;
     height: 2.5rem;
     margin-bottom: 2px;
@@ -213,3 +209,83 @@
 }
 
 
+
+.ChatSidebar{
+    position: fixed;
+    width: 10%;
+    height: 59%;
+
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-right: solid #00000050;
+    backdrop-filter: blur(2px);
+}
+
+.ChatSidebar .ContactHolder{
+    display: var(--is-Enabled);
+    height: 90%;
+    
+    border-radius: 10px;
+    color: white;
+    overflow-y: auto;
+}
+
+.ChatSidebar .ContactHolder::-webkit-scrollbar{
+    display: none;
+}
+.ChatSidebar .ContactHolder .Contact:nth-child(1){
+    border-top: solid #00000065;
+}
+
+
+.ChatSidebar .ContactHolder .Contact{
+    display: flex;
+    font-size: 75%;
+    align-items: center;
+    padding: 5px;
+    max-height: 50px;
+    border-bottom: solid #00000065;
+    gap: 5px;
+    
+    transition: all 250ms;
+    background-color: #317685Ac;
+}
+
+
+.ContactHolder h4{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.ChatSidebar .ContactHolder .Contact:hover{
+    background-color: #3176855c;
+}
+.ChatSidebar .ContactHolder .Contact:active{
+    background-color: #3176851c;
+}
+.ChatSidebar .ContactHolder .Contact img{
+    max-width: 35px;
+    max-height: 35px;
+}
+.ChatSidebar .ContactHolder .Contact *{
+    user-select: none;
+    flex: 1;
+}
+
+.tooltip{
+    display: none;
+    padding: 10px;
+    background-color: #3ec0de;
+    color: white;
+    border-radius: 10px;
+    opacity: 0;
+    transition: transform 250ms cubic-bezier(0.0, 0.1, 0.5, 1.5), opacity 100ms;
+    visibility: visible;
+}
+.Contact:hover .tooltip{
+    position: fixed;
+    visibility: visible;
+    transition-delay: 1s;
+    transform: translateY(40px);
+    opacity: 1;
+} 
