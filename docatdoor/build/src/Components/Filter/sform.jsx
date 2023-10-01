@@ -5,6 +5,8 @@ import NavBar from '../Navbar';
 import styles from '../SCSS/simple.module.scss'
 import { doc } from '@firebase/firestore';
 import ChatWindow from '../ChatWindows';
+import { RequestAppointment } from '../../API/requestAppointment';
+import { currentUser } from '../../Pages/LoginForm';
 
 // const http = require('http')
 
@@ -35,7 +37,7 @@ export const Sform = ()=>{
         CheckDoctor(obj, (list)=>{
             for(let i = 0; i < list.length; i++){
                 const ele = list[i]
-                ui.push(<DocUi Name={ele.Name} Specialization={ele.Specialization} Rating={ele.Rating} Id={ele.Id}/>)
+                ui.push(<DocUi Doctor={ele} Name={ele.Name} Specialization={ele.Specialization} Rating={ele.Rating} Id={ele.Id}/>)
             }
             // console.log("UI");
             // console.log(ui);
@@ -72,22 +74,14 @@ export const Sform = ()=>{
 function DocUi(params) {
     const [render, setRender] = useState(false)
 
-    const Vehdat = {
-        Id: 0,
-        Name: "Vehdat",
-        Specialization: "Fever",
-        Rating: "⭐⭐⭐⭐⭐",
-        Schedule: "1-4",
-        Experience: 15
-    }
-
     const book = (doctor)=>{
         // console.log("doctor book: ", doctor);
         // console.log("Ele: ", arr);
         renderDetails = true;
-        Det = <Details Doctor={params}/>
+        Det = <Details Doctor={params.Doctor}/>
         updateDetails();
-        console.log("Details: ", params);
+        RequestAppointment(params.Doctor.UserDataPath, currentUser.Name)
+        console.log("Details: ", params.Doctor);
         console.log(render);
         setRender(!render)
     }
@@ -97,7 +91,7 @@ function DocUi(params) {
             <h2>Dr. {params.Name}</h2>    
             <h2>Spec. {params.Specialization}</h2>    
             <h2>Rating {params.Rating}</h2>    
-            <button onClick={()=>book()}>Book</button>
+            <button onClick={book}>Book</button>
         </center>
         </>
     )
@@ -125,18 +119,21 @@ function Details(params){
         void detailsDoc.offsetWidth;
         detailsDoc.style.animationDirection = "reverse"
         detailsDoc.classList.add(styles.rollouts);
-
+        
         setTimeout(() => {
             renderDetails = false; 
             setRender(!render);
         }, 450);
-        
-
     }
+    const book = ()=>{
+        console.log("Doc: ", doctor);
+        hide()
+    }
+
     return(
         <>
         {
-            renderDetails?
+        renderDetails?
         
         <div id='det' className={`${styles.details} ${styles.rollouts}`}>
             <center className={styles.field}>
@@ -152,7 +149,7 @@ function Details(params){
                 <h1>{doctor.Rating}</h1>
             </center>
             <button className={`${styles.Btn} ${styles.closeBtn}`} onClick={()=>{hide()}}>Close</button>
-            <button className={`${styles.Btn} ${styles.appointBtn}`} onClick={()=>{hide()}}>Book</button>
+            <button className={`${styles.Btn} ${styles.appointBtn}`} onClick={()=>{book()}}>Book</button>
             </div>
         : <></>}
 

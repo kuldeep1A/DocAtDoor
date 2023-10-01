@@ -13,15 +13,13 @@ var chat = [
     <TextBubble side="right" msg="Ok great just in case if things get worse take a double dosage of the prescribed medicine, GoodBye"/>,
     <TextBubble side="left" msg="Ok, Thanks again bye"/>,
 ]
-var chat2 = [
-    <TextBubble side="left" msg="Hi"/>,
-    <TextBubble side="left" msg="Hello how are you feeling now?"/>,
-    <TextBubble side="left" msg="Much better than before, Thanks"/>,
-    <TextBubble side="right" msg="Ok great just in case if things get worse take a highh dosage of hte prescribed medicine, GoodBye"/>,
-]
-var Contacts = [<Contact Name="Vehdat Hamid Mansuri"/>,
-<Contact Name="Kuldeep Dhangar"/>,
-<Contact Name="Atiqur Rehman Mansuri"/>] 
+
+var Contacts = [
+            <Contact Name="Vehdat Hamid Mansuri"/>,
+            <Contact Name="Kuldeep Dhangar"/>,
+            <Contact Name="Atiqur Rehman Mansuri"/>
+        ]
+
 var eventAdded = false;
 export default function ChatWindow() {
     const [,forceUpdate] = useReducer(x => x+1, 0)
@@ -37,7 +35,7 @@ export default function ChatWindow() {
             msg.innerText = ""
             forceUpdate()
             setTimeout(() => {
-                win.scrollTop = win.scrollHeight;
+                win.scrollTop = win.scrollHeight;//Won't work without short delay
             }, 10);
         }
     }
